@@ -5,7 +5,7 @@
 #ifndef COMPILATIONPRINCIPLECOURSEDESGIN_STRUCTS_H
 #define COMPILATIONPRINCIPLECOURSEDESGIN_STRUCTS_H
 
-#endif //COMPILATIONPRINCIPLECOURSEDESGIN_STRUCTS_H
+
 
 #include "Enums.h"
 #include "defines.h"
@@ -29,3 +29,5 @@ struct tablestruct
     int adr;            /* 地址，仅const不使用 */
     int size;           /* 需要分配的数据区空间, 仅procedure使用 */
 };
+
+#endif //COMPILATIONPRINCIPLECOURSEDESGIN_STRUCTS_H

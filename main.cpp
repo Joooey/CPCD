@@ -2,43 +2,18 @@
 #include "defines.h"
 #include "Enums.h"
 #include "Structs.h"
+#include "GlobalVar.h"
+#include "Interpret.h"
+#include "GetUtils.h"
+#include "Block.h"
 
-
-bool listswitch;   /* 显示虚拟机代码与否 */
-bool tableswitch;  /* 显示符号表与否 */
-char ch;            /* 存放当前读取的字符，getch 使用 */
-enum symbol sym;    /* 当前的符号 */
-char id[al + 1];      /* 当前ident，多出的一个字节用于存放0 */
-int num;            /* 当前number */
-int cc, ll;         /* getch使用的计数器，cc表示当前字符(ch)的位置 */
-int cx;             /* 虚拟机代码指针, 取值范围[0, cxmax-1]*/
-char line[81];      /* 读取行缓冲区 */
-char a[al + 1];       /* 临时符号，多出的一个字节用于存放0 */
-struct instruction code[cxmax]; /* 存放虚拟机代码的数组 */
-char word[norw][al];        /* 保留字 */
-enum symbol wsym[norw];     /* 保留字对应的符号值 */
-enum symbol ssym[256];      /* 单字符的符号值 */
-char mnemonic[fctnum][5];   /* 虚拟机代码指令名称 */
-bool declbegsys[symnum];    /* 表示声明开始的符号集合 */
-bool statbegsys[symnum];    /* 表示语句开始的符号集合 */
-bool facbegsys[symnum];     /* 表示因子开始的符号集合 */
-
-
-struct tablestruct table[txmax]; /* 符号表 */
 
 void init();
 
-void getsym();
 
-void listall();
 
-FILE *fin;      /* 输入源文件 */
-FILE *ftable;    /* 输出符号表 */
-FILE *fcode;    /* 输出虚拟机代码 */
-FILE *foutput;  /* 输出文件及出错示意（如有错）、各行对应的生成代码首地址（如无错） */
-FILE *fresult;  /* 输出执行结果 */
-char fname[al] = {'1', '.', 't', 'x', 't'};
-int err;        /* 错误计数器 */
+int addset(bool* sr, bool* s1, bool* s2, int n);
+
 
 
 int main() {
@@ -125,115 +100,21 @@ int main() {
     return 0;
 }
 
-void listall() {
+
+
+
+int addset(bool* sr, bool* s1, bool* s2, int n)
+{
     int i;
-    if (listswitch)
+    for (i=0; i<n; i++)
     {
-        for (i = 0; i < cx; i++)
-        {
-            printf("%d %s %d %d\n", i, mnemonic[code[i].f], code[i].l, code[i].a);
-            fprintf(fcode,"%d %s %d %d\n", i, mnemonic[code[i].f], code[i].l, code[i].a);
-        }
+        sr[i] = s1[i]||s2[i];
     }
-
+    return 0;
 }
 
-void getsym() {
-    int i, j, k;
 
-    while (ch == ' ' || ch == 10 || ch == 9)    /* 过滤空格、换行和制表符 */
-    {
-        getch();
-    }
-    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) /* 当前的单词是标识符或是保留字 */
-    {
-        k = 0;
-        do {
-            if (k < al) {
-                a[k] = ch;
-                k++;
-            }
-            getch();
-        } while ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'));
-        a[k] = 0;
-        strcpy(id, a);
-        i = 0;
-        j = norw - 1;
-        do {    /* 搜索当前单词是否为保留字，使用二分法查找 */
-            k = (i + j) / 2;
-            if (strcmp(id, word[k]) <= 0) {
-                j = k - 1;
-            }
-            if (strcmp(id, word[k]) >= 0) {
-                i = k + 1;
-            }
-        } while (i <= j);
-        if (i - 1 > j) /* 当前的单词是保留字 */
-        {
-            sym = wsym[k];
-        } else /* 当前的单词是标识符 */
-        {
-            sym = ident;
-        }
-    } else {
-        if (ch >= '0' && ch <= '9') /* 当前的单词是数字 */
-        {
-            k = 0;
-            num = 0;
-            sym = number;
-            do {
-                num = 10 * num + ch - '0';
-                k++;
-                getch();;
-            } while (ch >= '0' && ch <= '9'); /* 获取数字的值 */
-            k--;
-            if (k > nmax) /* 数字位数太多 */
-            {
-                error(30);
-            }
-        } else {
-            if (ch == ':')        /* 检测赋值符号 */
-            {
-                getch();
-                if (ch == '=') {
-                    sym = becomes;
-                    getch();
-                } else {
-                    sym = nul;    /* 不能识别的符号 */
-                }
-            } else {
-                if (ch == '<')        /* 检测小于或小于等于符号 */
-                {
-                    getch();
-                    if (ch == '=') {
-                        sym = leq;
-                        getch();
-                    } else {
-                        sym = lss;
-                    }
-                } else {
-                    if (ch == '>')        /* 检测大于或大于等于符号 */
-                    {
-                        getch();
-                        if (ch == '=') {
-                            sym = geq;
-                            getch();
-                        } else {
-                            sym = gtr;
-                        }
-                    } else {
-                        sym = ssym[ch];        /* 当符号不满足上述条件时，全部按照单字符符号处理 */
-                        if (sym != period) {
-                            getch();
-                        }
 
-                    }
-                }
-            }
-        }
-    }
-
-}
 
 void init() {
     int i;

@@ -5,7 +5,7 @@
 #ifndef COMPILATIONPRINCIPLECOURSEDESGIN_ENUMS_H
 #define COMPILATIONPRINCIPLECOURSEDESGIN_ENUMS_H
 
-#endif //COMPILATIONPRINCIPLECOURSEDESGIN_ENUMS_H
+
 
 enum symbol {
     nul, ident, number, plus, minus,
@@ -30,3 +30,5 @@ enum fct {
     sto, cal, ini,
     jmp, jpc,
 };
+
+#endif //COMPILATIONPRINCIPLECOURSEDESGIN_ENUMS_H
