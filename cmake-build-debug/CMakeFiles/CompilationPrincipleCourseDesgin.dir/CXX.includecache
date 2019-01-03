@@ -7,8 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/xue/CPCD/Algorithm.h
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 GlobalVar.h
 /home/xue/CPCD/GlobalVar.h
 TargetUtils.h
@@ -17,8 +17,8 @@ SysUtils.h
 /home/xue/CPCD/SysUtils.h
 
 /home/xue/CPCD/Block.h
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 GlobalVar.h
 /home/xue/CPCD/GlobalVar.h
 TargetUtils.h
@@ -28,6 +28,8 @@ Algorithm.h
 GetUtils.h
 /home/xue/CPCD/GetUtils.h
 
+/home/xue/CPCD/Defines.h
+
 /home/xue/CPCD/Enums.h
 
 /home/xue/CPCD/GetUtils.h
@@ -45,24 +47,24 @@ cstdio
 -
 Enums.h
 /home/xue/CPCD/Enums.h
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 Structs.h
 /home/xue/CPCD/Structs.h
 
 /home/xue/CPCD/Interpret.h
 cstdio
 -
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 GlobalVar.h
 /home/xue/CPCD/GlobalVar.h
 
 /home/xue/CPCD/Structs.h
 Enums.h
 /home/xue/CPCD/Enums.h
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 
 /home/xue/CPCD/SysUtils.h
 cstring
@@ -80,13 +82,11 @@ Enums.h
 GlobalVar.h
 /home/xue/CPCD/GlobalVar.h
 
-/home/xue/CPCD/defines.h
-
 /home/xue/CPCD/main.cpp
 iostream
 -
-defines.h
-/home/xue/CPCD/defines.h
+Defines.h
+/home/xue/CPCD/Defines.h
 Enums.h
 /home/xue/CPCD/Enums.h
 Structs.h

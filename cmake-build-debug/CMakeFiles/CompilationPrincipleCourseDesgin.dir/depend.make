@@ -3,6 +3,7 @@
 
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Algorithm.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Block.h
+CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Defines.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Enums.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../GetUtils.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../GlobalVar.h
@@ -10,6 +11,5 @@ CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Interpret.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../Structs.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../SysUtils.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../TargetUtils.h
-CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../defines.h
 CMakeFiles/CompilationPrincipleCourseDesgin.dir/main.cpp.o: ../main.cpp
 

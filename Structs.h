@@ -8,7 +8,7 @@
 
 
 #include "Enums.h"
-#include "defines.h"
+#include "Defines.h"
 
 
 /* 虚拟机代码结构 */

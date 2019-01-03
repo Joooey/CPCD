@@ -6,7 +6,7 @@
 #define COMPILATIONPRINCIPLECOURSEDESGIN_ALGORITHM_H
 
 
-#include "defines.h"
+#include "Defines.h"
 #include "GlobalVar.h"
 #include "TargetUtils.h"
 #include "SysUtils.h"
@@ -555,5 +555,14 @@ void listcode(int cx0)
 
 
 
+int addset(bool* sr, bool* s1, bool* s2, int n)
+{
+    int i;
+    for (i=0; i<n; i++)
+    {
+        sr[i] = s1[i]||s2[i];
+    }
+    return 0;
+}
 
 #endif //COMPILATIONPRINCIPLECOURSEDESGIN_ALGORITHM_H

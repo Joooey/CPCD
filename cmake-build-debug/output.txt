@@ -1,0 +1,42 @@
+0 	const a=10;
+**             ^7
+1 	var b,c;
+**          ^7
+1 	procedure p;
+**              ^7
+2 		var d;
+**         ^7
+2 		begin
+**        ^19
+3 			d:=20;
+**          ^19
+3 			c:=d/a;
+**           ^19
+3 			c:=c+b;
+**           ^19
+3 			if a<c then c:=2*c 
+**     ^10
+**                       ^23
+9                 end;
+**                     ^6
+12 	begin
+**       ^19
+13 		read (b);
+**            ^19
+13 		while b#0 do
+**       ^10
+**               ^19
+17 			begin
+**        ^10
+**         ^19
+18 				call p;
+**        ^10
+**            ^19
+19                    write(2*c);
+**                               ^19
+19 				read(b)
+19 			end
+**       ^19
+19 	end.
+
+21 errors in pl/0 program!

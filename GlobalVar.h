@@ -8,7 +8,7 @@
 
 #include <cstdio>
 #include "Enums.h"
-#include "defines.h"
+#include "Defines.h"
 #include "Structs.h"
 
 

@@ -90,6 +90,9 @@
 		<Unit filename="/home/xue/CPCD/Block.h">
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
+		<Unit filename="/home/xue/CPCD/Defines.h">
+			<Option target="CompilationPrincipleCourseDesgin"/>
+		</Unit>
 		<Unit filename="/home/xue/CPCD/Enums.h">
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
@@ -97,6 +100,9 @@
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
 		<Unit filename="/home/xue/CPCD/GlobalVar.h">
+			<Option target="CompilationPrincipleCourseDesgin"/>
+		</Unit>
+		<Unit filename="/home/xue/CPCD/Init.h">
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
 		<Unit filename="/home/xue/CPCD/Interpret.h">
@@ -109,9 +115,6 @@
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
 		<Unit filename="/home/xue/CPCD/TargetUtils.h">
-			<Option target="CompilationPrincipleCourseDesgin"/>
-		</Unit>
-		<Unit filename="/home/xue/CPCD/defines.h">
 			<Option target="CompilationPrincipleCourseDesgin"/>
 		</Unit>
 		<Unit filename="/home/xue/CPCD/main.cpp">

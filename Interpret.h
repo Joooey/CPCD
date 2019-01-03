@@ -6,7 +6,7 @@
 #define COMPILATIONPRINCIPLECOURSEDESGIN_INTERPRET_H
 
 #include <cstdio>
-#include "defines.h"
+#include "Defines.h"
 #include "GlobalVar.h"
 
 

@@ -1,0 +1,11 @@
+    1 const a val=10
+    2 var   b lev=0 addr=3
+    3 var   c lev=0 addr=4
+    4 proc  p lev=0 addr=2 size=4
+    5 var   d lev=1 addr=3
+
+    1 const a val=10
+    2 var   b lev=0 addr=3
+    3 var   c lev=0 addr=4
+    4 proc  p lev=0 addr=2 size=4
+
